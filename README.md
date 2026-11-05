@@ -30,11 +30,9 @@
 </p>
 
 <p align="center">
-  <img alt="Rust tests" src="https://img.shields.io/badge/rust%20tests-1500%2B-16A34A">
-  <img alt="UI tests" src="https://img.shields.io/badge/ui%20tests-450%2B-16A34A">
-  <img alt="Clippy" src="https://img.shields.io/badge/clippy-clean-16A34A">
+  <img alt="Rust tests" src="https://img.shields.io/badge/rust%20tests-1700%2B-16A34A">
+  <img alt="UI tests" src="https://img.shields.io/badge/ui%20tests-480%2B-16A34A">
   <img alt="unsafe forbidden" src="https://img.shields.io/badge/unsafe-forbidden-16A34A">
-  <img alt="cargo-deny" src="https://img.shields.io/badge/cargo--deny-passing-16A34A">
   <img alt="TLS: rustls" src="https://img.shields.io/badge/TLS-rustls-2563EB">
   <img alt="Secrets in OS keychain" src="https://img.shields.io/badge/secrets-OS%20keychain-2563EB">
   <img alt="CLI: bb" src="https://img.shields.io/badge/CLI-bb-111827">
@@ -88,7 +86,6 @@ credential store.
 - [Documentation](#documentation)
 - [Contributing](#contributing)
 - [License](#license)
-- [Trademark](#trademark)
 - [Author](#author)
 
 ## Install
@@ -102,20 +99,8 @@ Download the latest version from the
 | **macOS** 11+ (Apple silicon and Intel) | `BucketBridge_<version>_macos_universal.dmg` | `bb_<version>_macos_universal.tar.gz` |
 | **Linux** (x86_64) | `.AppImage` (any distribution), `.deb` (Debian, Ubuntu), or `.tar.gz` | `bb_<version>_linux_x86_64.tar.gz` |
 
-Package managers (coming soon; manifests are ready in [`packaging/`](packaging)):
-
-```powershell
-# Windows
-winget install AnupShaw.BucketBridge
-scoop bucket add anupshaw50 https://github.com/anupshaw50/scoop-bucket
-scoop install bucketbridge bb
-```
-
-```bash
-# macOS
-brew install --cask anupshaw50/tap/bucketbridge
-brew install anupshaw50/tap/bb
-```
+Package managers (winget, Scoop, Homebrew) are planned but not available yet.
+Manifests are ready in [`packaging/`](packaging).
 
 Check a download against `SHA256SUMS` from the release:
 `Get-FileHash <file>` (Windows), `shasum -a 256 <file>` (macOS),
@@ -134,7 +119,7 @@ Check a download against `SHA256SUMS` from the release:
 | **Safe by default** | Keys live in the OS keychain, with an optional master password (Argon2id + AES-256-GCM). Objects can be encrypted on your machine before upload, destructive actions need typed confirmation, and the app runs under a strict Content Security Policy. |
 | **Works beyond AWS** | Custom endpoints, path-style addressing, requester pays and per-bucket region routing. Menus hide what an S3-compatible server does not support. |
 | **Scriptable** | `bb` prints one NDJSON record per item with `--json`, supports `--dry-run`, and has stable exit codes. |
-| **Heavily tested** | About 1,500 Rust tests and about 450 UI tests, plus Playwright smoke tests. The Rust tests cover unit logic, an in-process S3 server, scripted mock servers, and the desktop commands called through Tauri's mock runtime. |
+| **Heavily tested** | More than 1,700 Rust tests and more than 480 UI tests, plus Playwright smoke tests. The Rust tests cover unit logic, an in-process S3 server, scripted mock servers, and the desktop commands called through Tauri's mock runtime. |
 
 ## Features
 
